@@ -65,6 +65,7 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation files('../libs/SpringboardPluginLib.jar')
     implementation files('../libs/huami_libs.jar')
+    implementation files('../libs/WearServices_libs.jar')
     compileOnly 'com.google.android.wearable:wearable:2.3.0'
     implementation 'com.google.android.support:wearable:2.3.0'
     implementation "com.android.support:support-emoji:$supportLibVersion"
