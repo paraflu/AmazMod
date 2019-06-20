@@ -27,6 +27,7 @@ import com.edotassi.amazmod.event.WatchStatus;
 import com.edotassi.amazmod.support.FirebaseEvents;
 import com.edotassi.amazmod.support.ShellCommandHelper;
 import com.edotassi.amazmod.util.FilesUtil;
+import com.edotassi.amazmod.util.Screen;
 import com.edotassi.amazmod.util.WatchfaceUtil;
 import com.edotassi.amazmod.watch.Watch;
 import com.google.android.gms.tasks.CancellationTokenSource;
@@ -102,7 +103,7 @@ public class FileOpenerActivity extends BaseAppCompatActivity {
 
         ButterKnife.bind(this);
 
-        snackProgressBarManager = new SnackProgressBarManager(this.findViewById(android.R.id.content))
+        snackProgressBarManager = new SnackProgressBarManager(this.findViewById(android.R.id.content), this)
                 .setProgressBarColor(R.color.colorAccent)
                 .setBackgroundColor(SnackProgressBarManager.BACKGROUND_COLOR_DEFAULT)
                 .setTextSize(14)
@@ -447,6 +448,7 @@ public class FileOpenerActivity extends BaseAppCompatActivity {
                     }
                 })
                 .setShowProgressPercentage(true);
+        applyThemeSPB(progressBar);
         snackProgressBarManager.show(progressBar, SnackProgressBarManager.LENGTH_INDEFINITE);
 
         Watch.get().uploadFile(uploadFile, destPath, new Watch.OperationProgress() {
@@ -519,6 +521,11 @@ public class FileOpenerActivity extends BaseAppCompatActivity {
                 return null;
             }
         });
+    }
+
+    private void applyThemeSPB(SnackProgressBar progressBar) {
+        if (Screen.isDarkTheme()) {
+        }
     }
 
     private void installUpload(String destPath) {

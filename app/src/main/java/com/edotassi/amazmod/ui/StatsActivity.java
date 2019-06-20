@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.tingyik90.snackprogressbar.SnackProgressBar;
+import com.tingyik90.snackprogressbar.SnackProgressBarLayout;
 import com.tingyik90.snackprogressbar.SnackProgressBarManager;
 
 import org.tinylog.Logger;
@@ -89,7 +91,7 @@ public class StatsActivity extends BaseAppCompatActivity {
         getSupportActionBar().setTitle(R.string.stats);
         ButterKnife.bind(this);
 
-        snackProgressBarManager = new SnackProgressBarManager(findViewById(android.R.id.content))
+        snackProgressBarManager = new SnackProgressBarManager(findViewById(android.R.id.content), this)
                 // (optional) set the view which will animate with SnackProgressBar e.g. FAB when CoordinatorLayout is not used
                 //.setViewToMove(floatingActionButton)
                 // (optional) change progressBar color, default = R.color.colorAccent
@@ -102,6 +104,11 @@ public class StatsActivity extends BaseAppCompatActivity {
                 .setMessageMaxLines(2)
                 // (optional) register onDisplayListener
                 .setOnDisplayListener(new SnackProgressBarManager.OnDisplayListener() {
+                    @Override
+                    public void onLayoutInflated(SnackProgressBarLayout snackProgressBarLayout, FrameLayout frameLayout, SnackProgressBar snackProgressBar, int i) {
+
+                    }
+
                     @Override
                     public void onShown(SnackProgressBar snackProgressBar, int onDisplayId) {
                         // do something

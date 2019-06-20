@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.raizlabs.android.dbflow.config.FlowManager;
 import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.tingyik90.snackprogressbar.SnackProgressBar;
+import com.tingyik90.snackprogressbar.SnackProgressBarLayout;
 import com.tingyik90.snackprogressbar.SnackProgressBarManager;
 
 import org.apache.commons.lang3.time.DurationFormatUtils;
@@ -112,12 +114,17 @@ public class TweakingActivity extends BaseAppCompatActivity {
 
         ButterKnife.bind(this);
 
-        snackProgressBarManager = new SnackProgressBarManager(findViewById(android.R.id.content))
+        snackProgressBarManager = new SnackProgressBarManager(findViewById(android.R.id.content), this)
                 .setProgressBarColor(R.color.colorAccent)
                 .setBackgroundColor(SnackProgressBarManager.BACKGROUND_COLOR_DEFAULT)
                 .setTextSize(14)
                 .setMessageMaxLines(2)
                 .setOnDisplayListener(new SnackProgressBarManager.OnDisplayListener() {
+                    @Override
+                    public void onLayoutInflated(SnackProgressBarLayout snackProgressBarLayout, FrameLayout frameLayout, SnackProgressBar snackProgressBar, int i) {
+
+                    }
+
                     @Override
                     public void onShown(SnackProgressBar snackProgressBar, int onDisplayId) {
                         // do something
