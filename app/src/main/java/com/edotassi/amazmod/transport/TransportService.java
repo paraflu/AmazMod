@@ -17,6 +17,8 @@ import androidx.collection.ArrayMap;
 
 import com.edotassi.amazmod.AmazModApplication;
 import com.edotassi.amazmod.event.BatteryStatus;
+import com.edotassi.amazmod.event.ChimeToggleOff;
+import com.edotassi.amazmod.event.ChimeToggleOn;
 import com.edotassi.amazmod.event.Directory;
 import com.edotassi.amazmod.event.NextMusic;
 import com.edotassi.amazmod.event.NotificationReply;
@@ -104,6 +106,8 @@ public class TransportService extends Service implements Transporter.DataListene
         put(Transport.FILE_UPLOAD, RequestFileUpload.class);
         put(Transport.SILENCE,SilenceApplication.class);
         put(Transport.WIDGETS_DATA, ResultWidgets.class);
+        put(Transport.CHIME_ON, ChimeToggleOn.class);
+        put(Transport.CHIME_OFF, ChimeToggleOff.class);
     }};
 
     private static ArrayMap<String, Object> pendingResults = new ArrayMap<>();

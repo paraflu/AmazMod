@@ -42,6 +42,9 @@ public class Transport {
     public static final String FILE_UPLOAD = "file_upload";
     public static final String SILENCE = "silence";
 
+    public static final String CHIME_ON = "chime_on";
+    public static final String CHIME_OFF = "chime_off";
+
     public static final String HTTP_REQUEST = "com.huami.watch.companion.transport.amazfitcommunication.HTTP_REQUEST";
     public static final String HTTP_PINGBACK = "com.huami.watch.companion.transport.amazfitcommunication.HTTP_PINGBACK";
     public static final String HTTP_RESULT = "com.huami.watch.companion.transport.amazfitcommunication.HTTP_RESULT";
