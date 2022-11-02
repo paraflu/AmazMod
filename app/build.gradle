@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
-apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.jakewharton.butterknife'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -133,6 +133,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'com.github.ByteHamster:SearchPreference:v2.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.joaomgcd:taskerpluginlibrary:0.4.4'
 }
 
 configurations.all {

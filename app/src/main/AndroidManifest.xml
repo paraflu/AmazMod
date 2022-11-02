@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:name=".AmazModApplication"
@@ -199,6 +200,7 @@
         </activity>
         <activity android:name=".ui.NotificationPackageOptionsActivity" />
         <activity android:name=".ui.ChooseLanguageActivity" />
+        <activity android:name=".tasker.ActivityConfigTaskerAction"/>
 
         <service
             android:name=".notification.NotificationService"
